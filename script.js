@@ -43,75 +43,75 @@ baad mein bhi smile aa jaaye.
 
 Happy Birthday once again, Lambu. 🎂❤️`,
 
-   memories: [
+    memories: [
 
-    {
-        type: "image",
-        src: "photo01.jpeg",
-        caption: "A memory worth keeping."
-    },
+        {
+            type: "image",
+            src: "./photo01.jpeg",
+            caption: "A memory worth keeping."
+        },
 
-    {
-        type: "image",
-        src: "photo02.jpeg",
-        caption: "One of those good moments."
-    },
+        {
+            type: "image",
+            src: "./photo02.jpeg",
+            caption: "One of those good moments."
+        },
 
-    {
-        type: "image",
-        src: "photo03.jpeg",
-        caption: "A moment worth remembering."
-    },
+        {
+            type: "image",
+            src: "./photo03.jpeg",
+            caption: "A moment worth remembering."
+        },
 
-    {
-        type: "image",
-        src: "photo04.jpeg",
-        caption: "Some memories just stay."
-    },
+        {
+            type: "image",
+            src: "./photo04.jpeg",
+            caption: "Some memories just stay."
+        },
 
-    {
-        type: "image",
-        src: "photo05.jpeg",
-        caption: "A little moment, a lot of memories."
-    },
+        {
+            type: "image",
+            src: "./photo05.jpeg",
+            caption: "A little moment, a lot of memories."
+        },
 
-    {
-        type: "image",
-        src: "photo06.jpeg",
-        caption: "Another one for the memories."
-    },
+        {
+            type: "image",
+            src: "./photo06.jpeg",
+            caption: "Another one for the memories."
+        },
 
-    {
-        type: "image",
-        src: "photo07.jpeg",
-        caption: "Just one of those days."
-    },
+        {
+            type: "image",
+            src: "./photo07.jpeg",
+            caption: "Just one of those days."
+        },
 
-    {
-        type: "image",
-        src: "photo08.jpeg",
-        caption: "A memory worth keeping."
-    },
+        {
+            type: "image",
+            src: "./photo08.jpeg",
+            caption: "A memory worth keeping."
+        },
 
-    {
-        type: "image",
-        src: "photo09.jpeg",
-        caption: "Good times, good memories."
-    },
+        {
+            type: "image",
+            src: "./photo09.jpeg",
+            caption: "Good times, good memories."
+        },
 
-    {
-        type: "image",
-        src: "photo10.jpeg",
-        caption: "Another chapter to remember."
-    },
+        {
+            type: "image",
+            src: "./photo10.jpeg",
+            caption: "Another chapter to remember."
+        },
 
-    {
-        type: "image",
-        src: "photo11.jpeg",
-        caption: "And one more memory."
-    }
+        {
+            type: "image",
+            src: "./photo11.jpeg",
+            caption: "And one more memory."
+        }
 
-],
+    ],
 
     finalMessage: `Some people become a part of your life without even trying.
 And somehow, you became one of those people. ❤️`,
@@ -343,7 +343,9 @@ passwordToggle.addEventListener(
                 "Hide password"
             );
 
-        } else {
+        }
+
+        else {
 
             passwordInput.type = "password";
 
@@ -441,7 +443,9 @@ function openWelcomeScreen() {
 
         letterCard.hidden = false;
 
-    } else {
+    }
+
+    else {
 
         letterCard.hidden = true;
 
