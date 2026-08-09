@@ -1,0 +1,1256 @@
+/* =========================================================
+   SANJANA BIRTHDAY WEBSITE
+   Premium Minimalist Design System
+   ========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+
+:root {
+
+    /* ---------- Colors ---------- */
+
+    --bg: #0A0A0A;
+    --surface: #111111;
+    --surface-soft: #151515;
+    --surface-hover: #1A1A1A;
+
+    --text: #F5F5F5;
+    --text-soft: #C7C7C7;
+    --text-muted: #8E8E8E;
+
+    --border: #252525;
+    --border-soft: #1D1D1D;
+
+    --accent: #D9A8B3;
+    --accent-soft: rgba(217, 168, 179, 0.12);
+    --accent-border: rgba(217, 168, 179, 0.28);
+
+
+    /* ---------- Typography ---------- */
+
+    --text-xs: 0.72rem;
+    --text-sm: 0.86rem;
+    --text-md: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.6rem;
+    --text-2xl: 2.4rem;
+    --text-3xl: 3.2rem;
+
+
+    /* ---------- Spacing ---------- */
+
+    --space-1: 0.5rem;
+    --space-2: 0.75rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+    --space-7: 4rem;
+    --space-8: 6rem;
+
+
+    /* ---------- Radius ---------- */
+
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 26px;
+    --radius-full: 999px;
+
+
+    /* ---------- Layout ---------- */
+
+    --content-width: 720px;
+    --page-padding: 1.25rem;
+
+
+    /* ---------- Animation ---------- */
+
+    --transition-fast: 180ms ease;
+    --transition: 320ms ease;
+    --transition-slow: 500ms ease;
+}
+
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    text-rendering: optimizeLegibility;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   3. ELEMENT DEFAULTS
+   ========================================================= */
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+button {
+    border: 0;
+}
+
+
+button,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   4. APPLICATION
+   ========================================================= */
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   5. SCREEN SYSTEM
+   ========================================================= */
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+
+    padding:
+        var(--space-5)
+        var(--page-padding);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.screen[hidden] {
+    display: none !important;
+}
+
+
+.screen-content {
+    width: 100%;
+    max-width: var(--content-width);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   6. LANDING
+   ========================================================= */
+
+.screen-landing {
+    min-height: 100svh;
+}
+
+
+.screen-landing .screen-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.screen-landing h1 {
+    max-width: 650px;
+
+    margin-top: var(--space-1);
+
+    font-size: clamp(3rem, 14vw, 5.8rem);
+
+    font-weight: 700;
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+}
+
+
+.screen-landing .screen-description {
+    margin-top: var(--space-4);
+}
+
+
+/* =========================================================
+   7. EYEBROW
+   ========================================================= */
+
+.eyebrow {
+    color: var(--accent);
+
+    font-size: var(--text-xs);
+    font-weight: 600;
+
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   8. HEADINGS
+   ========================================================= */
+
+h1,
+h2 {
+    color: var(--text);
+
+    font-weight: 650;
+
+    letter-spacing: -0.035em;
+}
+
+
+.screen h1 {
+    font-size: clamp(2.25rem, 10vw, 4rem);
+
+    line-height: 1.05;
+}
+
+
+.screen-description {
+    max-width: 520px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    color: var(--text-muted);
+
+    font-size: var(--text-md);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   9. PRIMARY BUTTON
+   ========================================================= */
+
+.primary-button {
+    min-height: 54px;
+
+    margin-top: var(--space-5);
+
+    padding:
+        0.9rem
+        1.6rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+
+    border-radius: var(--radius-full);
+
+    background: var(--text);
+    color: #0A0A0A;
+
+    font-size: 0.95rem;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+
+.primary-button:hover {
+    transform: translateY(-2px);
+}
+
+
+.primary-button:active {
+    transform: scale(0.97);
+}
+
+
+.primary-button span {
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   10. SECONDARY BUTTON
+   ========================================================= */
+
+.secondary-button {
+    min-height: 44px;
+
+    padding:
+        0.65rem
+        1rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-full);
+
+    background: var(--surface);
+    color: var(--text-soft);
+
+    font-size: 0.82rem;
+    font-weight: 550;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.secondary-button:hover {
+    background: var(--surface-hover);
+    border-color: #333333;
+    color: var(--text);
+}
+
+
+.secondary-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   11. PASSWORD SCREEN
+   ========================================================= */
+
+.screen-password .screen-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.lock-icon {
+    width: 62px;
+    height: 62px;
+
+    margin-bottom: var(--space-4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    font-size: 1.6rem;
+}
+
+
+.screen-password h1 {
+    margin-top: var(--space-2);
+}
+
+
+/* =========================================================
+   12. PASSWORD FORM
+   ========================================================= */
+
+.password-form {
+    width: 100%;
+    max-width: 420px;
+
+    margin:
+        var(--space-5)
+        auto
+        0;
+}
+
+
+.input-wrapper {
+    width: 100%;
+
+    position: relative;
+}
+
+
+.input-wrapper input {
+    width: 100%;
+    height: 56px;
+
+    padding:
+        0 4.5rem
+        0 1.1rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    outline: none;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 1rem;
+
+    transition:
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+
+.input-wrapper input::placeholder {
+    color: #666666;
+}
+
+
+.input-wrapper input:focus {
+    border-color: var(--accent-border);
+
+    background: var(--surface-soft);
+}
+
+
+.input-action {
+    position: absolute;
+
+    top: 50%;
+    right: 0.75rem;
+
+    transform: translateY(-50%);
+
+    padding: 0.35rem 0.45rem;
+
+    background: transparent;
+    color: var(--text-muted);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.input-action:hover {
+    color: var(--text);
+}
+
+
+.password-form .primary-button {
+    width: 100%;
+}
+
+
+.form-error {
+    margin-top: 0.75rem;
+
+    color: #D9A8B3;
+
+    font-size: 0.82rem;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   13. WELCOME + LETTER
+   ========================================================= */
+
+.screen-welcome {
+    align-items: flex-start;
+
+    padding-top: 10vh;
+    padding-bottom: 8vh;
+}
+
+
+.screen-welcome .screen-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.screen-welcome h1 {
+    margin-top: var(--space-2);
+}
+
+
+.letter-card {
+    width: 100%;
+
+    margin-top: var(--space-6);
+
+    padding:
+        2rem
+        1.4rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #101010
+        );
+
+    text-align: left;
+}
+
+
+.letter-label {
+    color: var(--accent);
+
+    font-size: 0.72rem;
+    font-weight: 650;
+
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+
+.letter-card h2 {
+    margin-top: 0.8rem;
+
+    font-size: 1.6rem;
+}
+
+
+.letter-content {
+    margin-top: var(--space-4);
+
+    color: var(--text-soft);
+
+    font-size: 1rem;
+    line-height: 1.9;
+
+    white-space: pre-line;
+}
+
+
+.letter-signature {
+    margin-top: var(--space-5);
+
+    color: var(--text);
+
+    font-size: 0.95rem;
+    font-weight: 550;
+}
+
+
+/* =========================================================
+   14. MEMORIES PAGE
+   ========================================================= */
+
+.screen-memories {
+    align-items: flex-start;
+
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+
+.memories-container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* ---------- Memories Header ---------- */
+
+.memories-header {
+    width: 100%;
+
+    min-height: 62px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 0.75rem;
+}
+
+
+.memories-header > :last-child {
+    justify-self: end;
+}
+
+
+.memories-title {
+    text-align: center;
+}
+
+
+.memories-title .eyebrow {
+    font-size: 0.62rem;
+}
+
+
+.memories-title h1 {
+    margin-top: 0.15rem;
+
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   15. MEDIA VIEWER
+   ========================================================= */
+
+.media-viewer {
+    width: 100%;
+    margin-top: var(--space-4);
+}
+
+
+.media-frame {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    background: #050505;
+}
+
+
+/* Stable media area so controls don't jump */
+
+.media-container {
+    width: 100%;
+
+    height: 68vh;
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #050505;
+
+    touch-action: pan-y;
+}
+
+
+.media-container img,
+.media-container video {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    background: #050505;
+}
+
+
+.media-container img {
+    border-radius: var(--radius-lg);
+
+    animation: memoryFadeIn 0.35s ease;
+}
+
+
+@keyframes memoryFadeIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+.media-container video {
+    max-width: 100%;
+    max-height: 100%;
+
+    animation: memoryFadeIn 0.35s ease;
+}
+
+
+/* =========================================================
+   16. MEDIA NAVIGATION
+   ========================================================= */
+
+.media-navigation {
+    margin-top: var(--space-4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+
+.media-navigation-button {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-fast),
+        transform var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+
+.media-navigation-button:hover {
+    background: var(--surface-hover);
+    border-color: #333333;
+}
+
+
+.media-navigation-button:active {
+    transform: scale(0.92);
+}
+
+
+.media-counter {
+    min-width: 70px;
+
+    color: var(--text-muted);
+
+    font-size: 0.82rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   17. MEDIA CAPTION
+   ========================================================= */
+
+.media-caption {
+    min-height: 28px;
+
+    margin:
+        var(--space-3)
+        auto
+        0;
+
+    max-width: 620px;
+
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   18. MEDIA CONTROLS
+   ========================================================= */
+
+.media-controls {
+    margin-top: var(--space-3);
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.media-controls .secondary-button {
+    min-width: 120px;
+}
+
+
+/* =========================================================
+   19. FINAL SCREEN
+   ========================================================= */
+
+.screen-final {
+    min-height: 100svh;
+}
+
+
+.screen-final .screen-content {
+    width: min(100%, 760px);
+
+    margin: 0 auto;
+
+    padding:
+        2.5rem
+        1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* ---------- Birthday Reveal ---------- */
+
+.screen-final .final-reveal {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.screen-final .birthday-symbol {
+    display: block;
+
+    margin-bottom: 0.7rem;
+
+    font-size: 2rem;
+}
+
+
+.screen-final .final-label {
+    margin: 0;
+
+    color: var(--accent);
+
+    font-size: 0.72rem;
+    font-weight: 650;
+
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+
+.screen-final .final-reveal h2 {
+    margin: 0.55rem 0 0;
+
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* ---------- Final Message ---------- */
+
+.screen-final .final-message {
+    display: block;
+
+    width: min(100%, 560px);
+
+    margin: 1.25rem auto 0;
+
+    color: var(--text-soft);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    text-align: center;
+
+    white-space: pre-line;
+}
+
+
+/* ---------- Final Video ---------- */
+
+.screen-final .final-video-wrapper {
+    width: min(100%, 460px);
+
+    margin: 2rem auto 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    background: #050505;
+}
+
+
+.screen-final .final-video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 62vh;
+
+    object-fit: contain;
+
+    border-radius: var(--radius-lg);
+
+    background: #050505;
+}
+
+
+/* ---------- Final Signature ---------- */
+
+.screen-final .final-signature {
+    margin: 1.25rem 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* ---------- Final Home ---------- */
+
+.screen-final .final-actions {
+    width: 100%;
+
+    margin-top: 1.5rem;
+
+    padding-top: 1.25rem;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.screen-final .final-actions .secondary-button {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   20. VISUALLY HIDDEN
+   ========================================================= */
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   21. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (min-width: 600px) {
+
+    :root {
+        --page-padding: 2rem;
+    }
+
+
+    .screen {
+        padding-top: var(--space-6);
+        padding-bottom: var(--space-6);
+    }
+
+
+    .letter-card {
+        padding: 2.5rem;
+    }
+
+
+    .media-container {
+        height: 65vh;
+        min-height: 420px;
+    }
+
+}
+
+
+/* =========================================================
+   22. RESPONSIVE — DESKTOP
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    :root {
+        --page-padding: 2.5rem;
+    }
+
+
+    .screen {
+        padding-top: var(--space-7);
+        padding-bottom: var(--space-7);
+    }
+
+
+    .screen-landing h1 {
+        font-size: clamp(4rem, 8vw, 6.5rem);
+    }
+
+
+    .screen-description {
+        font-size: 1.05rem;
+    }
+
+
+    .media-frame {
+        border-radius: var(--radius-lg);
+    }
+
+
+    .media-container {
+        height: 68vh;
+        min-height: 520px;
+    }
+
+
+    .media-container img,
+    .media-container video {
+        max-height: 100%;
+    }
+
+
+    .letter-card {
+        padding: 3rem;
+    }
+
+}
+
+
+/* =========================================================
+   23. MOBILE MEDIA
+   ========================================================= */
+
+@media (max-width: 599px) {
+
+    .media-container {
+        height: 60vh;
+        min-height: 320px;
+    }
+
+
+    .media-container img,
+    .media-container video {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   24. MEMORIES — FINAL TRANSITION
+   ========================================================= */
+
+.memories-continue {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-4);
+}
+
+
+.memories-continue .eyebrow {
+    text-align: center;
+
+    margin-bottom: var(--space-2);
+}
+
+
+/* =========================================================
+   25. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   26. FINAL SCREEN — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .screen-final .screen-content {
+        padding:
+            2rem
+            1rem;
+    }
+
+
+    .screen-final .birthday-symbol {
+        font-size: 1.9rem;
+    }
+
+
+    .screen-final .final-reveal h2 {
+        font-size: clamp(2.4rem, 12vw, 3.5rem);
+    }
+
+
+    .screen-final .final-message {
+        width: 90%;
+
+        margin-top: 1rem;
+
+        font-size: 0.95rem;
+
+        line-height: 1.65;
+    }
+
+
+    .screen-final .final-video-wrapper {
+        width: 88%;
+
+        max-width: 420px;
+
+        margin-top: 1.75rem;
+
+        border-radius: 18px;
+    }
+
+
+    .screen-final .final-video {
+        max-height: 64vh;
+
+        border-radius: 18px;
+    }
+
+
+    .screen-final .final-signature {
+        margin-top: 1rem;
+    }
+
+
+    .screen-final .final-actions {
+        margin-top: 1.25rem;
+
+        padding-top: 1rem;
+    }
+
+}
